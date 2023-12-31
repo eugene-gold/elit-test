@@ -1,0 +1,61 @@
+@import './fonts.scss';
+@import './variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #0C0C0D;
+    font-weight: 400;
+}
+
+input,
+button,
+textarea,
+select {
+    margin: 0;
+    font: inherit;
+    color: #ffffff;
+    border: none;
+}
+
+ul {
+    list-style-type: none;  
+}
+  
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 4.6rem;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+h4 {
+    font-weight: 400;
+}
+
+h5 {
+    font-weight: 300;
+}
+
+h6 {
+    font-weight: 200;
+}
+
+
+
+
+  
