@@ -41,6 +41,7 @@ import Tag from './Tag.vue'
 }
 
 .image__state {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
