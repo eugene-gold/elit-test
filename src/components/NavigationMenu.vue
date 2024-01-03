@@ -3,8 +3,8 @@
     <div class="logo">
       <img src="/logo.png" alt="company_name" />
     </div>
-    <div class="search">
-      <Button class="search__catalog">
+    <div class="search search_margin">
+      <Button class="search__catalog" @click="console.log('notning here...')">
         <svg
           width="16"
           height="16"
@@ -17,7 +17,7 @@
           <rect y="9" width="7" height="7" rx="2" fill="white" />
           <rect x="9" y="9" width="7" height="7" rx="2" fill="white" />
         </svg>
-        <span>Каталог</span>
+        <span class="search__name">Каталог</span>
       </Button>
 
       <span class="search__icon">
@@ -44,15 +44,15 @@
           />
         </svg>
       </span>
+      <input
+        class="search__input"
+        v-model="inputData"
+        @keyup.enter="console.log('hi!')"
+        placeholder="Поиск по товарам"
+      />
     </div>
-    <input
-      class="search__input"
-      v-model="inputData"
-      @keyup.enter="console.log('hi!')"
-      placeholder="Поиск по товарам"
-    />
 
-    <ul class="navbar">
+    <ul class="navbar navbar_margin">
       <li class="navbar__item">
         <span class="navbar__icon">
           <svg
@@ -74,7 +74,7 @@
         </span>
         <span class="navbar__name">Войти</span>
       </li>
-      <li class="navbar__item">
+      <li class="navbar__item navbar__item_margin-left">
         <span class="navbar__icon">
           <svg
             width="17"
@@ -95,9 +95,10 @@
             />
           </svg>
         </span>
+        <span class="navbar__badge">5</span>
         <span class="navbar__name">Заказы</span>
       </li>
-      <li class="navbar__item">
+      <li class="navbar__item navbar__item_margin-left">
         <span class="navbar__icon">
           <svg
             width="21"
@@ -112,10 +113,10 @@
             />
           </svg>
         </span>
-        <span class="navebar__favorite-counter">1</span>
+        <span class="navbar__badge">2</span>
         <span class="navbar__name">Избранное</span>
       </li>
-      <li class="navbar__item">
+      <li class="navbar__item navbar__item_margin-left">
         <span class="navbar__icon">
           <svg
             width="21"
@@ -138,6 +139,7 @@
             />
           </svg>
         </span>
+        <span class="navbar__badge">22</span>
         <span class="navbar__name">Корзина</span>
       </li>
     </ul>
@@ -153,11 +155,15 @@ import Button from './ui/Button.vue'
 
 
 <style lang="scss" scoped>
-@import '../assets/variables.scss';
+@import '@/assets/variables.scss';
 
 .navigation {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
   padding: 2.6rem 0;
+  max-width: 128rem;
+  margin: 0 auto;
 }
 .logo {
   width: 20.2rem;
@@ -168,22 +174,41 @@ import Button from './ui/Button.vue'
   display: flex;
   height: 4.2rem;
   position: relative;
+  width: 48.828125%;
+}
+
+.search_margin {
+  margin-left: 0.5rem;
 }
 
 .search__catalog {
   width: 12rem;
   height: 4.2rem;
+  position: absolute;
+}
+
+.search__name {
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  padding-left: 1.2rem;
 }
 
 .search__icon {
   display: flex;
   position: absolute;
-  right: 0.5rem;
+  top: 50%;
+  right: 1.6rem;
+  transform: translate(0, -50%);
 }
 
 .navbar {
-  max-width: 28.3rem;
   display: flex;
+}
+
+.navbar_margin {
+  margin-left: 0.5rem;
 }
 
 .navbar__item {
@@ -191,6 +216,11 @@ import Button from './ui/Button.vue'
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.navbar__item_margin-left {
+  margin-left: 3rem;
 }
 
 .navbar__icon {
@@ -206,7 +236,30 @@ import Button from './ui/Button.vue'
   line-height: 1.44rem;
 }
 
+.navbar__badge {
+  color: #ffffff;
+  border-radius: 4.4rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.32rem;
+  background: #f3223c;
+  height: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+  position: absolute;
+  top: -0.3rem;
+  left: 55%;
+}
+
 .search__input {
-  color: #858585;
+  color: $grey-font-color;
+  background: $bg-transparent;
+  border-radius: 0.9rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  width: 100%;
+  padding-left: 13.6rem;
 }
 </style>

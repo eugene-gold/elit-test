@@ -9,7 +9,7 @@
       :rate="4.6"
       country="Германия"
       :weight="300"
-      :isAdded="true"
+      :isAdded="isAdded"
       :isFavorite="true"
       :onClickFavorite="onClickFavorite"
       :onClickAdd="onClickAdd"
@@ -19,13 +19,16 @@
 
 <script setup>
 import Card from './CardComponent/Card.vue'
+import { ref } from 'vue'
+
+const isAdded = ref(false)
 
 const onClickFavorite = (e) => {
   e.target.classList.toggle('added')
 }
 
 const onClickAdd = () => {
-  console.log('+')
+  isAdded.value ? (isAdded.value = false) : (isAdded.value = true)
 }
 </script>
 

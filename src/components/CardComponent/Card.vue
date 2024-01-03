@@ -34,7 +34,7 @@
         />
       </svg>
     </span>
-    <div class="image image_padding">
+    <div class="image image_padding" :class="{ image_height: isAdded }">
       <ImageTagComponent />
 
       <img class="image_pic" alt="Img_name" :src="imageUrl" />
@@ -49,7 +49,7 @@
       </div>
       <div class="price-block price-block_margin">
         <div class="prices">
-          <span class="prices__old">{{ priceOld }} &#8381;</span>
+          <span v-if="priceOld" class="prices__old">{{ priceOld }} &#8381;</span>
           <MyBonus v-if="bonus">{{ bonus }}</MyBonus>
           <div class="prices__actual prices__actual_margin-top">
             {{ price }} &#8381; <span class="prices__measure">/кг</span>
@@ -155,6 +155,10 @@ defineProps({
   position: relative;
 }
 
+.image_height {
+  height: 42%;
+}
+
 .image__info {
   display: flex;
   align-items: center;
@@ -172,8 +176,8 @@ defineProps({
   fill: #ffcb20;
 }
 
-image__rate {
-  color: grey-rate-color;
+.image__rate {
+  color: $grey-rate-color;
   line-height: 1.68rem;
   font-size: 1.4rem;
   font-weight: 500;
