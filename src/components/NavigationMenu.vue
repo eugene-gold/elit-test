@@ -254,7 +254,7 @@ import Button from './ui/Button.vue'
 }
 
 .search__input {
-  color: $grey-font-color;
+  color: $light-font-color;
   background: $bg-transparent;
   border-radius: 0.9rem;
   font-size: 1.5rem;

@@ -6,17 +6,17 @@
   <main>
     <BreadCrumbs />
     <div class="main__content">
-      <GoodsFilter />
+      <SideMenu />
       <CardsList />
     </div>
   </main>
 </template>
 
 <script setup>
-import CardsList from './components/CardsList.vue'
-import GoodsFilter from './components/GoodsFilter.vue'
-import NavigationMenu from './components/NavigationMenu.vue'
-import BreadCrumbs from './components/ui/BreadCrumbs.vue'
+import CardsList from '@/components/CardsList.vue'
+import SideMenu from '@/components/SideMenuComponent/SideMenu.vue'
+import NavigationMenu from '@/components/NavigationMenu.vue'
+import BreadCrumbs from '@/components/ui/BreadCrumbs.vue'
 </script>
 
 

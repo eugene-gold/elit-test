@@ -116,8 +116,8 @@
 </template>
 
 <script setup>
-import Button from '../ui/Button.vue'
-import MyBonus from '../ui/MyBonus.vue'
+import Button from '@/components/ui/Button.vue'
+import MyBonus from './ui/MyBonus.vue'
 import ImageTagComponent from './ui/ImageTagComponent.vue'
 
 defineProps({
@@ -223,7 +223,7 @@ defineProps({
 .info__country {
   font-size: 1.3rem;
   line-height: 1.56rem;
-  color: $grey-font-color;
+  color: $light-font-color;
 }
 
 .added {
@@ -247,7 +247,7 @@ defineProps({
 .prices__old {
   font-size: 1.5rem;
   line-height: 1.8rem;
-  color: $grey-font-color;
+  color: $light-font-color;
   text-decoration: line-through;
 }
 .prices__actual {
@@ -263,7 +263,7 @@ defineProps({
   font-weight: inherit;
   font-size: 1.5rem;
   line-height: 1.8rem;
-  color: $grey-font-color;
+  color: $light-font-color;
 }
 
 .counter {

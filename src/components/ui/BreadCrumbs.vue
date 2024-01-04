@@ -32,7 +32,7 @@
 }
 
 .crumbs__path {
-  color: $grey-font-color;
+  color: $light-font-color;
   font-size: 1.4rem;
   line-height: 1.68rem;
 }
