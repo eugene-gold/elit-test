@@ -1,6 +1,6 @@
 <template>
   <div class="crumbs">
-    <span class="crumbs__path">Главная</span>
+    <h4 class="crumbs__path">Главная</h4>
     <span class="crumbs__next">
       <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -9,7 +9,7 @@
         />
       </svg>
     </span>
-    <span class="crumbs__path">Каталог</span>
+    <h4 class="crumbs__path">Каталог</h4>
     <span class="crumbs__next">
       <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -18,7 +18,7 @@
         />
       </svg>
     </span>
-    <span class="crumbs__path">Мясо. Птица. Фарш</span>
+    <h4 class="crumbs__path">Мясо. Птица. Фарш</h4>
   </div>
 </template>
 
@@ -33,8 +33,6 @@
 
 .crumbs__path {
   color: $light-font-color;
-  font-size: 1.4rem;
-  line-height: 1.68rem;
 }
 
 .crumbs__next {

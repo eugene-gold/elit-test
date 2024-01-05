@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="cards__wrapper cards__wrapper_margin-top">
     <Card
       imageUrl="./img/Preview.png"
       title='Индейка, филе грудки на подложке замороженное "Индилайт"'
@@ -33,4 +33,12 @@ const onClickAdd = () => {
 </script>
 
 <style lang="scss" scoped>
+.cards__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+.cards__wrapper_margin-top {
+  margin-top: 2rem;
+}
 </style>

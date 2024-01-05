@@ -20,38 +20,43 @@ const goodsData = ref([
   {
     type: 'Страна',
     list: [
-      { country: 'Россия', status: false },
-      { country: 'Сербия', status: false }
+      { filter: 'Россия', status: false },
+      { filter: 'Сербия', status: false }
     ]
   },
   {
     type: 'Направления меню',
     list: [
-      { country: 'Банкетное меню', status: false },
-      { country: 'Бургеры', status: true },
-      { country: 'Воки', status: false },
-      { country: 'Денер, шаурма, хот-дог', status: false },
-      { country: 'Закуски для бара', status: false },
-      { country: 'Итальянская кухня', status: false },
-      { country: 'Суши и роллы', status: false }
+      { filter: 'Банкетное меню', status: false },
+      { filter: 'Бургеры', status: true },
+      { filter: 'Воки', status: false },
+      { filter: 'Денер, шаурма, хот-дог', status: false },
+      { filter: 'Закуски для бара', status: false },
+      { filter: 'Итальянская кухня', status: false },
+      { filter: 'Итальянская кухня', status: false },
+      { filter: 'Итальянская кухня', status: false },
+      { filter: 'Итальянская кухня', status: false },
+      { filter: 'Итальянская кухня', status: false },
+      { filter: 'Итальянская кухня', status: false },
+      { filter: 'Суши и роллы', status: false }
     ]
   },
   {
     type: 'Вид сыра',
     list: [
-      { country: 'Москарпоне', status: false },
-      { country: 'Сулугуни', status: false },
-      { country: 'Плавленный', status: false },
-      { country: 'Сметанковый', status: false },
-      { country: 'С белой плесенью', status: false },
-      { country: 'Прочее', status: false }
+      { filter: 'Москарпоне', status: false },
+      { filter: 'Сулугуни', status: false },
+      { filter: 'Плавленный', status: false },
+      { filter: 'Сметанковый', status: false },
+      { filter: 'С белой плесенью', status: false },
+      { filter: 'Прочее', status: false }
     ]
   },
   {
     type: 'Вкус сыра',
     list: [
-      { country: 'Сливочный', status: false },
-      { country: 'Копченый', status: false }
+      { filter: 'Сливочный', status: false },
+      { filter: 'Копченый', status: false }
     ]
   }
 ])

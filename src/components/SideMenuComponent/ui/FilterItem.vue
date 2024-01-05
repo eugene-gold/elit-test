@@ -1,7 +1,7 @@
 <template>
   <label class="filter"
     >{{ filterName }}
-    <input class="filter__input" type="checkbox" :checked="isChecked" />
+    <input class="filter__input" :type="type || 'checkbox'" :checked="isChecked" :name="name" />
     <span class="filter__checkmark"></span>
   </label>
 </template>
@@ -9,7 +9,9 @@
 <script setup>
 defineProps({
   filterName: String,
-  isChecked: Boolean
+  isChecked: Boolean,
+  name: String,
+  type: String
 })
 </script>
 

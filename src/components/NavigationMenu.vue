@@ -95,7 +95,6 @@
             />
           </svg>
         </span>
-        <span class="navbar__badge">5</span>
         <span class="navbar__name">Заказы</span>
       </li>
       <li class="navbar__item navbar__item_margin-left">

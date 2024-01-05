@@ -1,7 +1,8 @@
 <template>
   <section class="filter-menu filter-menu_margin-btm">
     <div class="filter-menu__header">
-      <span class="filter-menu__name">{{ filterType }}</span>
+      <h3 class="filter-menu__name" v-if="filterType">{{ filterType }}</h3>
+      <slot></slot>
       <span class="filter-menu__opener" @click="onClickOpen">
         <svg
           :class="{ opened: isOpen }"
@@ -22,13 +23,19 @@
     </div>
     <div
       class="filter-menu__wrapper"
-      :class="{ filters_visibility: !isOpen, 'filter-menu__wrapper_margin-top': isOpen }"
+      :class="{
+        'filter-menu__wrapper_filters_visibility': !isOpen,
+        'filter-menu__wrapper_margin-top': isOpen,
+        'filter-menu__wrapper_absolute_container': isSorted
+      }"
     >
       <FilterItem
         v-for="item in filterArray"
-        :filterName="item.country"
+        :filterName="item.filter"
         :isChecked="item.status"
-        :key="item.country"
+        :key="item.filter"
+        :name="name"
+        :type="type"
       />
     </div>
   </section>
@@ -42,7 +49,10 @@ const isOpen = ref(true)
 
 defineProps({
   filterType: String,
-  filterArray: Array
+  filterArray: Array,
+  name: String,
+  type: String,
+  isSorted: Boolean
 })
 
 const onClickOpen = () => {
@@ -56,6 +66,7 @@ const onClickOpen = () => {
 .filter-menu {
   display: flex;
   flex-direction: column;
+  max-height: 26.2rem;
 }
 
 .filter-menu_margin-btm {
@@ -66,12 +77,6 @@ const onClickOpen = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.filter-menu__name {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 2.16rem;
 }
 
 .filter-menu__opener {
@@ -89,9 +94,21 @@ const onClickOpen = () => {
   width: 100%;
   flex-direction: column;
   overflow: hidden;
+  overflow-y: auto;
 }
-.filters_visibility {
+.filter-menu__wrapper_filters_visibility {
   height: 0;
+}
+
+.filter-menu__wrapper_absolute_container {
+  position: absolute;
+  width: 19.2rem;
+  padding: 2rem 1.6rem 0.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+  right: 0;
+  top: 1rem;
+  background: #ffffff;
 }
 
 .filter-menu__wrapper_margin-top {

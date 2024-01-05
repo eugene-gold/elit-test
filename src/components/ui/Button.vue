@@ -18,5 +18,6 @@
   padding: 0.5rem;
   background: $main-color;
   border-radius: 0.9rem;
+  cursor: pointer;
 }
 </style>

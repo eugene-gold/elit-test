@@ -146,7 +146,7 @@ defineProps({
   height: 44.1rem;
   border: 1px solid $bg-transparent;
   border-radius: 0.9rem;
-  box-shadow: 0 0.2rem 20rem rgba(12, 12, 13, 0.15);
+  box-shadow: $element-shadow;
 }
 
 .image {
