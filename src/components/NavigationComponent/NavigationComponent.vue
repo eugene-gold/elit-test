@@ -1,20 +1,19 @@
 <template>
-  <div class="navigation navigation_margin-top">
+  <div class="navigation navigation_margin">
     <Button class="navigation__button">Загрузить еще</Button>
-    <div class="navigation__pages navigation__pages_margin_rigth">
-      <span class="navigation__page navigation__page_margin-left navigation__page_active">1</span>
-      <span class="navigation__page navigation__page_margin-left">2</span>
-      <span class="navigation__page navigation__page_margin-left">3</span>
-      <Button>
+    <div class="navigation__pages navigation__pages_margin_top">
+      <span class="navigation__page navigation_font navigation__page_margin-left">1</span>
+      <span class="navigation__page navigation_font navigation__page_margin-left">2</span>
+      <span class="navigation__page navigation_font navigation__page_margin-left">3</span>
+      <Button class="navigation__next navigation_font navigation__next_margin-left">
         Дальше
-        <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M0.163078 8.83555C-0.0541614 8.61609 -0.0543879 8.26004 0.162571 8.04029L3.65836 4.49962L0.162615 0.959748C-0.0543678 0.740026 -0.0541801 0.383978 0.163035 0.164491C0.38025 -0.0549955 0.732237 -0.0548058 0.94922 0.164916L4.83739 4.10216C5.05419 4.3217 5.05421 4.67738 4.83743 4.89695L0.949263 8.83504C0.732303 9.05479 0.380316 9.05502 0.163078 8.83555Z"
-            fill="#858585"
-          />
-        </svg>
+        <span class="navigation__next_margin-left">
+          <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M0.163078 8.83555C-0.0541614 8.61609 -0.0543879 8.26004 0.162571 8.04029L3.65836 4.49962L0.162615 0.959748C-0.0543678 0.740026 -0.0541801 0.383978 0.163035 0.164491C0.38025 -0.0549955 0.732237 -0.0548058 0.94922 0.164916L4.83739 4.10216C5.05419 4.3217 5.05421 4.67738 4.83743 4.89695L0.949263 8.83504C0.732303 9.05479 0.380316 9.05502 0.163078 8.83555Z"
+              fill="#858585" />
+          </svg>
+        </span>
       </Button>
     </div>
   </div>
@@ -22,6 +21,7 @@
 
 <script setup>
 import Button from '../ui/Button.vue'
+
 </script>
 
 <style lang="scss" scoped>
@@ -30,10 +30,13 @@ import Button from '../ui/Button.vue'
 .navigation {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.navigation_margin-top {
+.navigation_margin {
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .navigation__button {
@@ -46,23 +49,47 @@ import Button from '../ui/Button.vue'
 
 .navigation__pages {
   display: flex;
+  padding-left: 6.5rem;
+  align-items: center;
 }
-.navigation__pages_margin_rigth {
-  margin-right: 2.5rem;
+
+.navigation__pages_margin_top {
+  margin-top: 2rem;
 }
 
 .navigation__page {
   width: 1rem;
-  height: 1rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.navigation__page:hover {
+  transform: scale(1.3);
+  color: #0c0c0d;
+}
+
+.navigation__next {
+  background: none;
+  width: 7.7rem;
+  padding: 0;
+  height: 2rem;
+}
+
+.navigation__next_margin-left {
+  margin-left: 2.5rem;
+}
+
+.navigation__next_margin-left {
+  margin-left: 1.4rem;
+}
+
+.navigation_font {
   font-size: 1.5rem;
   line-height: 1.8rem;
   font-weight: 500;
   cursor: pointer;
   color: $light-font-color;
-}
-
-.navigation__page_active {
-  color: #0c0c0d;
 }
 
 .navigation__page_margin-left {

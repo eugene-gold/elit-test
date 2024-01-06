@@ -1,7 +1,7 @@
 <template>
   <section class="filter-menu filter-menu_margin-btm">
     <div class="filter-menu__header">
-      <h3 class="filter-menu__name" v-if="filterType">{{ filterType }}</h3>
+      <h2 class="filter-menu__name" v-if="filterType">{{ filterType }}</h2>
       <slot></slot>
       <span class="filter-menu__opener" @click="onClickOpen">
         <svg
