@@ -11,8 +11,8 @@
     <div class="item-main">
       <div class="item-main__image">
         <div class="item-main__tags">
-          <Tag tag-name="хит">Хит</Tag>
-          <Tag tag-name="новинка">Новинка</Tag>
+          <TagElement tag-name="хит">Хит</TagElement>
+          <TagElement tag-name="новинка">Новинка</TagElement>
         </div>
         <img class="item-main__image" :alt="name" :src="imageUrl" />
         <FavoriteIcon :on-click-favorite="onClickFavorite" :is-favorite="isFavorite"
@@ -32,12 +32,12 @@
         </div>
 
         <div class="item-main__prices">
-          <MyBonus v-if="bonus">{{ bonus }}</MyBonus>
-          <Price :price="price" :measure="measure" class="item-main_price-kg" :style-object="{
+          <BonusElement v-if="bonus">{{ bonus }}</BonusElement>
+          <PriceElement :price="price" :measure="measure" class="item-main_price-kg" :style-object="{
             fontSize: '2rem',
             letterSpacing: '-0.15rem'
           }" />
-          <Price :price="2456" measure="кор" class="item-main_price-pack" :style-object="{
+          <PriceElement :price="2456" measure="кор" class="item-main_price-pack" :style-object="{
             fontSize: '1.3rem',
             lineHeight: '1.56rem'
           }" />
@@ -72,12 +72,12 @@
 </template>
 
 <script setup>
-import ItemRate from './ui/ItemRate.vue';
-import FavoriteIcon from './ui/FavoriteIcon.vue';
-import Button from './ui/Button.vue';
-import Tag from './CardComponent/ui/Tag.vue';
-import MyBonus from './CardComponent/ui/MyBonus.vue';
-import Price from './ui/Price.vue';
+import ItemRate from '@/components/ui/ItemRate.vue';
+import FavoriteIcon from '@/components/ui/FavoriteIcon.vue';
+import Button from '@/components/ui/Button.vue';
+import TagElement from '@/components/ui/TagElement.vue'
+import BonusElement from '@/components/ui/BonusElement.vue'
+import PriceElement from '@/components/ui/PriceElement.vue'
 defineProps({
 
   imageUrl: String,
@@ -103,7 +103,7 @@ defineProps({
   flex-direction: column;
   position: relative;
   max-width: 75rem;
-  padding: 3rem;
+  padding: 2rem;
   background: #ffffff;
 }
 

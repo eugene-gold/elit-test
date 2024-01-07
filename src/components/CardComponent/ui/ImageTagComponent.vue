@@ -1,9 +1,9 @@
 <template>
   <div class="tags_wrapper tags_wrapper_btm">
     <div class="image__tags image__tags_margin_btm">
-      <Tag tag-name="хит">Хит</Tag>
-      <Tag tag-name="новинка">Новинка</Tag>
-      <Tag tag-name="заморозка">Заморозка</Tag>
+      <TagElement tag-name="хит">Хит</TagElement>
+      <TagElement tag-name="новинка">Новинка</TagElement>
+      <TagElement tag-name="заморозка">Заморозка</TagElement>
     </div>
 
     <div class="image__state">
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import Tag from './Tag.vue'
+import TagElement from '@/components/ui/TagElement.vue';
 </script>
 
 <style lang="scss" scoped>

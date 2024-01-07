@@ -11,7 +11,7 @@
 
       <img class="image_pic" :alt="title" :src="imageUrl" />
 
-      <Button class="image__button" :class="{ image__button_active: hover }">
+      <Button class="image__button" :class="{ image__button_active: hover }" @click="isVisible = true">
         Подробнее
       </Button>
     </div>
@@ -26,8 +26,8 @@
       <div class="price-block price-block_margin">
         <div class="prices">
           <span v-if="priceOld" class="prices__old">{{ priceOld }} &#8381;</span>
-          <MyBonus v-if="bonus">{{ bonus }}</MyBonus>
-          <Price :price="price" :measure="measure" />
+          <BonusElement v-if="bonus">{{ bonus }}</BonusElement>
+          <PriceElement :price="price" :measure="measure" />
         </div>
         <Button @click="onClickAdd" v-if="!isAdded">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,18 +63,29 @@
 
     </div>
   </div>
+
+  <Teleport to="body">
+    <Modal :show="isVisible" @close="isVisible = false">
+      <ItemComponent name='Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг' company='Fish & More'
+        country='Россия' :weight="12" :rate="4.6" :onClickFavorite="onClickFavorite" :isFavorite="true"
+        imageUrl="./img/modal.png" :bonus="18" :price="366" measure="кг" />
+    </Modal>
+  </Teleport>
 </template>
 
 <script setup>
 import Button from '@/components/ui/Button.vue'
-import MyBonus from './ui/MyBonus.vue'
+import BonusElement from '@/components/ui/BonusElement.vue';
 import ImageTagComponent from './ui/ImageTagComponent.vue'
 import { ref } from 'vue';
 import ItemRate from '../ui/ItemRate.vue';
 import FavoriteIcon from '../ui/FavoriteIcon.vue';
-import Price from '../ui/Price.vue';
+import PriceElement from '@/components/ui/PriceElement.vue';
+import Modal from '@/components/ui/Modal.vue';
+import ItemComponent from '@/components/ItemComponent/ItemComponent.vue';
 
 const hover = ref(false);
+const isVisible = ref(false);
 
 defineProps({
   imageUrl: String,
@@ -90,6 +101,7 @@ defineProps({
   isFavorite: Boolean,
   onClickAdd: Function,
   onClickFavorite: Function
+
 })
 
 

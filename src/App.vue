@@ -17,6 +17,7 @@ import SideMenu from '@/components/SideMenuComponent/SideMenu.vue'
 import NavigationMenu from '@/components/NavigationMenu.vue'
 import BreadCrumbs from '@/components/ui/BreadCrumbs.vue'
 import ContentPage from './pages/ContentPage.vue'
+
 </script>
 
 
