@@ -1,15 +1,15 @@
 <template>
   <div class="card" @mouseover="hover = true" @mouseleave="hover = false">
 
-    <ItemRate :rate="rate" />
+    <ItemRate :rate="item.rate" />
 
-    <FavoriteIcon :on-click-favorite="onClickFavorite" :is-favorite="isFavorite" />
+    <FavoriteIcon :is-favorite="item.isFavorite" />
 
-    <div class="image image_padding" :class="{ image_height: isAdded }">
+    <div class="image image_padding" :class="{ image_height: item.isAdded }">
 
-      <ImageTagComponent />
+      <ImageTagComponent :tags="item.tags" />
 
-      <img class="image_pic" :alt="title" :src="imageUrl" />
+      <img class="image_pic" :alt="item.title" :src="item.imageUrl" />
 
       <Button class="image__button" :class="{ image__button_active: hover }" @click="isVisible = true">
         Подробнее
@@ -17,19 +17,19 @@
     </div>
     <div class="info-wrapper info-wrapper_padding">
       <div class="info">
-        <p class="info__description">{{ title }}</p>
+        <p class="info__description">{{ item.title }}</p>
         <p class="info__data info__data_margin-top">
-          <span class="info__weigth"> {{ weight }} г &middot; </span>
-          <span class="info__country"> {{ country }}</span>
+          <span class="info__weigth"> {{ item.weight }} г &middot; </span>
+          <span class="info__country"> {{ item.country }}</span>
         </p>
       </div>
       <div class="price-block price-block_margin">
         <div class="prices">
-          <span v-if="priceOld" class="prices__old">{{ priceOld }} &#8381;</span>
-          <BonusElement v-if="bonus">{{ bonus }}</BonusElement>
-          <PriceElement :price="price" :measure="measure" />
+          <span v-if="item.priceOld" class="prices__old">{{ item.priceOld }} &#8381;</span>
+          <BonusElement v-if="item.bonus">{{ item.bonus }}</BonusElement>
+          <PriceElement :price="item.price" :measure="item.measure" />
         </div>
-        <Button @click="onClickAdd" v-if="!isAdded">
+        <Button @click="main.addOnClick(item.id)" v-if="!item.isAdded">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
               d="M0 0.909091C0 0.407014 0.407014 0 0.909091 0H4.21487C4.65117 0 5.02594 0.30995 5.10781 0.738493L5.79379 4.329H19.0909C19.3605 4.329 19.6162 4.44867 19.7889 4.65567C19.9616 4.86267 20.0336 5.13566 19.9853 5.40091L18.6618 12.6715C18.5484 13.2695 18.2363 13.8153 17.7699 14.2086C17.3051 14.6007 16.7171 14.815 16.1076 14.8052H8.09075C7.48121 14.815 6.89328 14.6007 6.42842 14.2086C5.96214 13.8154 5.65014 13.2699 5.53667 12.672L4.15618 5.44629C4.15053 5.42215 4.14583 5.39765 4.14214 5.37282L3.46302 1.81818H0.909091C0.407014 1.81818 0 1.41117 0 0.909091ZM6.14115 6.14719L7.32293 12.3328C7.3607 12.532 7.46264 12.7024 7.60057 12.8187C7.7375 12.9342 7.90184 12.9905 8.06439 12.9872L8.08264 12.987H16.1157L16.1339 12.9872C16.2965 12.9905 16.4608 12.9342 16.5978 12.8187C16.7351 12.7029 16.8368 12.5335 16.8749 12.3354L16.8754 12.3328L18.0014 6.14719H6.14115Z"
@@ -43,7 +43,7 @@
           </svg>
         </Button>
       </div>
-      <div class="counter counter_margin-t" v-if="isAdded">
+      <div class="counter counter_margin-t" v-if="item.isAdded">
         <Button class="counter__button">
           <svg width="18" height="4" viewBox="0 0 18 4" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -66,9 +66,7 @@
 
   <Teleport to="body">
     <Modal :show="isVisible" @close="isVisible = false">
-      <ItemComponent name='Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг' company='Fish & More'
-        country='Россия' :weight="12" :rate="4.6" :onClickFavorite="onClickFavorite" :isFavorite="true"
-        imageUrl="./img/modal.png" :bonus="18" :price="366" measure="кг" />
+      <ItemComponent :item="item" />
     </Modal>
   </Teleport>
 </template>
@@ -83,27 +81,20 @@ import FavoriteIcon from '../ui/FavoriteIcon.vue';
 import PriceElement from '@/components/ui/PriceElement.vue';
 import Modal from '@/components/ui/Modal.vue';
 import ItemComponent from '@/components/ItemComponent/ItemComponent.vue';
+import { useMainStore } from '@/stores/mainStore';
+const main = useMainStore()
 
 const hover = ref(false);
 const isVisible = ref(false);
 
+
 defineProps({
-  imageUrl: String,
-  title: String,
-  price: Number,
-  measure: String,
-  priceOld: Number,
-  bonus: Number,
-  rate: Number,
-  country: String,
-  weight: Number,
-  isAdded: Boolean,
-  isFavorite: Boolean,
-  onClickAdd: Function,
-  onClickFavorite: Function
-
+  item: {
+    type: Object,
+    requred: true,
+    default: () => { },
+  }
 })
-
 
 </script>
 

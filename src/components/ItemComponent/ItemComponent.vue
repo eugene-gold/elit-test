@@ -1,39 +1,30 @@
 <template>
   <div class="item-wrapper">
 
-    <span class="item-wrapper__close">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 1L1 13M1 1L13 13" stroke="#BDBDBD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-
-    </span>
-
     <div class="item-main">
       <div class="item-main__image">
         <div class="item-main__tags">
-          <TagElement tag-name="хит">Хит</TagElement>
-          <TagElement tag-name="новинка">Новинка</TagElement>
+          <TagElement v-for="tag in item.tags" :key="tag" :tag-name="tag">{{ tag }}</TagElement>
         </div>
-        <img class="item-main__image" :alt="name" :src="imageUrl" />
-        <FavoriteIcon :on-click-favorite="onClickFavorite" :is-favorite="isFavorite"
-          class="item-main__favorite_position" />
+        <img class="item-main__image" :alt="item.name" :src="item.imageUrl" />
+        <FavoriteIcon :is-favorite="item.isFavorite" class="item-main__favorite_position" />
       </div>
 
       <div class="item-main__info">
         <div class="item-main__header">
 
-          <h3>{{ name }}</h3>
+          <h3>{{ item.title }}</h3>
 
           <div class="item-main__company item-main__company_margin-top">
-            <span class="item-main_name item-main_name_margin-rigth">{{ company }}</span>
-            <span class="item-main_country">{{ country }} {{ weight }} кг</span>
-            <ItemRate :rate="rate" class="item-main__rate" />
+            <span class="item-main_name item-main_name_margin-rigth">{{ item.company }}</span>
+            <span class="item-main_country">{{ item.country }} {{ item.weight }} кг</span>
+            <ItemRate :rate="item.rate" class="item-main__rate" />
           </div>
         </div>
 
         <div class="item-main__prices">
-          <BonusElement v-if="bonus">{{ bonus }}</BonusElement>
-          <PriceElement :price="price" :measure="measure" class="item-main_price-kg" :style-object="{
+          <BonusElement v-if="item.bonus">{{ item.bonus }}</BonusElement>
+          <PriceElement :price="item.price" :measure="item.measure" class="item-main_price-kg" :style-object="{
             fontSize: '2rem',
             letterSpacing: '-0.15rem'
           }" />
@@ -79,19 +70,11 @@ import TagElement from '@/components/ui/TagElement.vue'
 import BonusElement from '@/components/ui/BonusElement.vue'
 import PriceElement from '@/components/ui/PriceElement.vue'
 defineProps({
-
-  imageUrl: String,
-  id: String,
-  name: String,
-  company: String,
-  country: String,
-  weight: Number,
-  rate: Number,
-  bonus: Number,
-  price: Number,
-  measure: String,
-  isFavorite: Boolean,
-  onClickFavorite: Function
+  item: {
+    type: Object,
+    requred: true,
+    default: () => { },
+  }
 })
 </script>
 
@@ -107,16 +90,6 @@ defineProps({
   background: #ffffff;
 }
 
-.item-wrapper__close {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  width: 1.4rem;
-  height: 1.4rem;
-  right: 3rem;
-  top: 3rem;
-  cursor: pointer;
-}
 
 .item-main {
   display: flex;

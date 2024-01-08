@@ -10,10 +10,15 @@
 
 <script setup>
 
+
 defineProps({
-    onClickFavorite: Function,
-    isFavorite: Boolean
+    isFavorite: Boolean,
+
 })
+
+const onClickFavorite = (e) => {
+    e.target.classList.toggle('added')
+}
 
 </script>
 

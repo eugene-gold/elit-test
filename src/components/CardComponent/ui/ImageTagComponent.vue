@@ -1,9 +1,7 @@
 <template>
   <div class="tags_wrapper tags_wrapper_btm">
     <div class="image__tags image__tags_margin_btm">
-      <TagElement tag-name="хит">Хит</TagElement>
-      <TagElement tag-name="новинка">Новинка</TagElement>
-      <TagElement tag-name="заморозка">Заморозка</TagElement>
+      <TagElement v-for="tag in tags" :key="tag" :tag-name="tag">{{ tag }}</TagElement>
     </div>
 
     <div class="image__state">
@@ -17,6 +15,10 @@
 
 <script setup>
 import TagElement from '@/components/ui/TagElement.vue';
+
+defineProps({
+  tags: Array
+})
 </script>
 
 <style lang="scss" scoped>

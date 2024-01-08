@@ -1,12 +1,12 @@
 <template>
-  <div
-    class="tag"
-    :class="[
-      { orangeTag: tagName === 'хит' },
-      { greenTag: tagName === 'новинка' },
-      { blueTag: tagName === 'заморозка' }
-    ]"
-  >
+  <div class="tag" :class="[
+    { orangeTag: tagName.toLowerCase() === 'хит' },
+    { greenTag: tagName.toLowerCase() === 'новинка' },
+    { blueTag: tagName.toLowerCase() === 'заморозка' },
+    { redTag: tagName.toLowerCase() === 'ликвидация' },
+    { plusTag: tagName === '9+1' }
+
+  ]">
     <slot>{{ tagName }}</slot>
   </div>
 </template>
@@ -18,6 +18,8 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/variables.scss';
+
 .tag {
   padding: 0.6rem 0.8rem;
   border-radius: 0.6rem;
@@ -37,5 +39,13 @@ defineProps({
 
 .blueTag {
   background: rgba(34, 198, 234, 1);
+}
+
+.redTag {
+  background: $main-color;
+}
+
+.plusTag {
+  background: rgba(145, 139, 198, 1);
 }
 </style>
