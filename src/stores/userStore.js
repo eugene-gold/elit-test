@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia'
+import { useMainStore } from './mainStore';
+
 
 export const useUserStore = defineStore('userStore', {
   state: () => ({
@@ -12,13 +14,50 @@ export const useUserStore = defineStore('userStore', {
   actions: {
     addToUserCart(object) {
       this.userData.userCart.push(object)
-      console.log(this.userData.userCart);
     },
 
     addToUserFilters(filter) {
-      this.userData.filters.includes(filter) ? this.userData.filters.pop(filter) : this.userData.filters.push(filter)
-      console.log(this.userData.filters);
+      const main = useMainStore()
+      if (this.userData.filters.includes(filter)) {
+        this.userData.filters = this.userData.filters.filter((el) => el !== filter)
+        //вынести в computed
+        main.data.filters.forEach((element) => {
+          if (element.list) {
+            element.list.forEach((el) => {
+              el.filter === filter ? el.status = false : null
+            })
+          }
+        });
+      }
+      else if (!this.userData.filters.includes(filter)) {
+        this.userData.filters.push(filter)
+        //вынести в computed
+        main.data.filters.forEach((element) => {
+          if (element.list) {
+            element.list.forEach((el) => {
+              el.filter === filter ? el.status = !el.status : null
+            })
+          }
+        });
 
+      }
+
+    },
+
+    removeFilter(filter) {
+      const main = useMainStore()
+      if (this.userData.filters.includes(filter)) {
+        this.userData.filters = this.userData.filters.filter((el) => el !== filter)
+        //вынести в computed
+        main.data.filters.forEach((element) => {
+          if (element.list) {
+            element.list.forEach((el) => {
+              el.filter === filter ? el.status = !el.status : null
+            })
+          }
+        });
+
+      }
     },
 
     incrementWeight(id) {

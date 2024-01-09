@@ -17,7 +17,6 @@ const db = {
         { filter: 'Денер, шаурма, хот-дог', status: false },
         { filter: 'Закуски для бара', status: false },
         { filter: 'Итальянская кухня', status: false },
-        { filter: 'Сметанковый', status: true },
         { filter: 'Bonefesto', status: true },
         { filter: 'Суши и роллы', status: false }
       ]
@@ -28,7 +27,7 @@ const db = {
         { filter: 'Москарпоне', status: false },
         { filter: 'Сулугуни', status: false },
         { filter: 'Плавленный', status: false },
-        { filter: 'Сметанковый', status: false },
+        { filter: 'Сметанковый', status: true },
         { filter: 'С белой плесенью', status: false },
         { filter: 'Прочее', status: false }
       ]
@@ -64,7 +63,7 @@ const db = {
       country: "Германия",
       weight: 300,
       isAdded: false,
-      isFavorite: false,
+      isFavorite: true,
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',

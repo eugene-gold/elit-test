@@ -12,13 +12,11 @@
 
 <script setup>
 import CategoryInfo from './ui/CategoryInfo.vue'
-import { ref } from 'vue'
 import { useMainStore } from '@/stores/mainStore';
 import { useUserStore } from '@/stores/userStore';
 const main = useMainStore()
 const user = useUserStore()
 
-const chosenArray = ref(['Bonefesto', 'Сметанковый'])
 </script>
 
 <style lang="scss" scoped>

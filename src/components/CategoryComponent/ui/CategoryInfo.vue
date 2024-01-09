@@ -3,7 +3,7 @@
     :class="{ 'category__container_margin-bottom': quantity, category_green_theme: !quantity }">
     {{ category }}
     <span class="category__quantity category__quantity_margin-left">{{ quantity }}</span>
-    <span class="category__close" v-if="!quantity" @click="user.addToUserFilters(category)">
+    <span class="category__close" v-if="!quantity" @click="user.removeFilter(category)">
       <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7 1L1 7M1 1L7 7" stroke="#46A175" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
@@ -18,6 +18,7 @@ defineProps({
   category: String,
   quantity: Number
 })
+// user.addToUserFilters(category)
 </script>
 
 <style lang="scss" scoped>
