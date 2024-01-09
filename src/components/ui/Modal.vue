@@ -1,8 +1,8 @@
 <template>
   <Transition name="modal">
-    <div class="modal" v-if="show" @click="$emit('close')">
-      <div @click.stop class="modal__content" @click="$emit('close')">
-        <span class="modal__close">
+    <div class="modal" v-if="show">
+      <div class="modal__content">
+        <span class="modal__close" @click="$emit('close')">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M13 1L1 13M1 1L13 13" stroke="#BDBDBD" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -28,7 +28,7 @@ defineProps({
 
 .modal {
   position: fixed;
-  z-index: 9998;
+  z-index: 99;
   top: 0;
   left: 0;
   width: 100%;

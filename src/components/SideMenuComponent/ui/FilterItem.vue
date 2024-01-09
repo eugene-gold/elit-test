@@ -1,12 +1,15 @@
 <template>
-  <label class="filter"
-    >{{ filterName }}
-    <input class="filter__input" :type="type || 'checkbox'" :checked="isChecked" :name="name" />
+  <label class="filter">{{ filterName }}
+    <input @click="user.addToUserFilters(filterName)" class="filter__input" :type="type || 'checkbox'"
+      :checked="isChecked" :name="name" />
     <span class="filter__checkmark"></span>
   </label>
 </template>
 
 <script setup>
+import { useUserStore } from '@/stores/userStore';
+const user = useUserStore()
+
 defineProps({
   filterName: String,
   isChecked: Boolean,
@@ -50,11 +53,11 @@ defineProps({
   background-color: $bg-transparent;
 }
 
-.filter:hover .filter__input ~ .filter__checkmark {
+.filter:hover .filter__input~.filter__checkmark {
   background-color: #ccc;
 }
 
-.filter .filter__input:checked ~ .filter__checkmark {
+.filter .filter__input:checked~.filter__checkmark {
   background-color: $filter-checked-color;
 }
 
@@ -64,7 +67,7 @@ defineProps({
   display: none;
 }
 
-.filter .filter__input:checked ~ .filter__checkmark:after {
+.filter .filter__input:checked~.filter__checkmark:after {
   display: block;
 }
 

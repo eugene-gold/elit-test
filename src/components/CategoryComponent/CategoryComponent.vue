@@ -5,7 +5,7 @@
         :quantity="item.quantity" />
     </div>
     <div class="categories__chosen">
-      <CategoryInfo v-for="item in chosenArray" :key="item" :category="item" />
+      <CategoryInfo v-for="item in user.userData.filters" :key="item" :category="item" />
     </div>
   </div>
 </template>
@@ -14,7 +14,9 @@
 import CategoryInfo from './ui/CategoryInfo.vue'
 import { ref } from 'vue'
 import { useMainStore } from '@/stores/mainStore';
+import { useUserStore } from '@/stores/userStore';
 const main = useMainStore()
+const user = useUserStore()
 
 const chosenArray = ref(['Bonefesto', 'Сметанковый'])
 </script>

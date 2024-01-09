@@ -68,7 +68,8 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
     },
     {
       id: 2,
@@ -85,7 +86,8 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
 
     },
     {
@@ -103,7 +105,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -121,7 +125,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -139,7 +145,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -157,7 +165,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -175,7 +185,9 @@ const db = {
       measure: "кг",
       tags: ["Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -193,7 +205,9 @@ const db = {
       measure: "кг",
       tags: [],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -211,7 +225,9 @@ const db = {
       measure: "кг",
       tags: ["Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -229,7 +245,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Ликвидация"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -247,7 +265,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "9+1", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -265,7 +285,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -283,7 +305,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -301,7 +325,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -319,7 +345,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
     {
@@ -337,7 +365,9 @@ const db = {
       measure: "кг",
       tags: ["Хит", "Новинка", "Заморозка"],
       name: 'Корейка свиная на кости без хребта "СК Короча" "Мираторг" 5,42 кг',
-      company: 'Fish & More'
+      company: 'Fish & More',
+      userSelected: null
+
 
     },
   ]

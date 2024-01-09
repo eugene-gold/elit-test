@@ -3,7 +3,7 @@
 
     <ItemRate :rate="item.rate" />
 
-    <FavoriteIcon :is-favorite="item.isFavorite" />
+    <FavoriteIcon :is-favorite="item.isFavorite" :id="item.id" />
 
     <div class="image image_padding" :class="{ image_height: item.isAdded }">
 
@@ -44,15 +44,16 @@
         </Button>
       </div>
       <div class="counter counter_margin-t" v-if="item.isAdded">
-        <Button class="counter__button">
+        <Button class="counter__button" @click="user.decrementWeight(item.id)">
           <svg width="18" height="4" viewBox="0 0 18 4" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M7.875 0.875H1.5C0.87868 0.875 0.375 1.37868 0.375 2C0.375 2.62132 0.87868 3.125 1.5 3.125H7.875H10.125H16.5C17.1213 3.125 17.625 2.62132 17.625 2C17.625 1.37868 17.1213 0.875 16.5 0.875H10.125H7.875Z"
               fill="#0C0C0D" />
           </svg>
         </Button>
-        <span class="counter__quantity">2.5кг</span>
-        <Button class="counter__button">
+        <span class="counter__quantity" v-if="item.userSelected">{{ item.userSelected / 1000 }} кг</span>
+        <span class="counter__quantity" v-if="!item.userSelected">2.5 кг</span>
+        <Button class="counter__button" @click="user.incrementWeight(item.id)">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M10.125 1.5C10.125 0.87868 9.62132 0.375 9 0.375C8.37868 0.375 7.875 0.87868 7.875 1.5V7.875H1.5C0.87868 7.875 0.375 8.37868 0.375 9C0.375 9.62132 0.87868 10.125 1.5 10.125H7.875V16.5C7.875 17.1213 8.37868 17.625 9 17.625C9.62132 17.625 10.125 17.1213 10.125 16.5V10.125H16.5C17.1213 10.125 17.625 9.62132 17.625 9C17.625 8.37868 17.1213 7.875 16.5 7.875H10.125V1.5Z"
@@ -82,7 +83,9 @@ import PriceElement from '@/components/ui/PriceElement.vue';
 import Modal from '@/components/ui/Modal.vue';
 import ItemComponent from '@/components/ItemComponent/ItemComponent.vue';
 import { useMainStore } from '@/stores/mainStore';
+import { useUserStore } from '@/stores/userStore';
 const main = useMainStore()
+const user = useUserStore()
 
 const hover = ref(false);
 const isVisible = ref(false);

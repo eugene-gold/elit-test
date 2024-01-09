@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import db from '@/db/db'
+import { useUserStore } from './userStore'
 
 export const useMainStore = defineStore('mainStore', {
   state: () => {
@@ -24,13 +25,28 @@ export const useMainStore = defineStore('mainStore', {
     },
 
     toggleFavorite(id) {
+      const user = useUserStore()
       const el = this.data.items.find((el) => el.id === id)
-      console.log(el);
+      if (!el.isFavorite) {
+        el.isFavorite = true
+        user.userData.favorite.push(el)
+        console.log(user.userData.favorite);
+      } else {
+        el.isFavorite = false
+        user.userData.favorite = user.userData.favorite.filter((el) => el.id !== id)
+        console.log(user.userData.favorite);
+
+
+      }
+
     },
 
     addOnClick(id) {
+      const user = useUserStore()
       const el = this.data.items.find((el) => el.id === id)
       el.isAdded = !el.isAdded
+      user.userData.userCart.push(el)
+      console.log(user.userData.userCart)
     }
 
 

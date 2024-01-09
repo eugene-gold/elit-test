@@ -1,5 +1,5 @@
 <template>
-    <div class="image__favorite" @click="onClickFavorite">
+    <div class="image__favorite" @click="main.toggleFavorite(id)">
         <svg class="image__like" :class="{ added: isFavorite }" width="22" height="20" viewBox="0 0 22 20" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -9,16 +9,14 @@
 </template>
 
 <script setup>
-
+import { useMainStore } from '@/stores/mainStore';
+const main = useMainStore()
 
 defineProps({
     isFavorite: Boolean,
+    id: Number
 
 })
-
-const onClickFavorite = (e) => {
-    e.target.classList.toggle('added')
-}
 
 </script>
 

@@ -7,7 +7,7 @@
           <TagElement v-for="tag in item.tags" :key="tag" :tag-name="tag">{{ tag }}</TagElement>
         </div>
         <img class="item-main__image" :alt="item.name" :src="item.imageUrl" />
-        <FavoriteIcon :is-favorite="item.isFavorite" class="item-main__favorite_position" />
+        <FavoriteIcon :is-favorite="item.isFavorite" class="item-main__favorite_position" :id="item.id" />
       </div>
 
       <div class="item-main__info">
