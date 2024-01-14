@@ -35,7 +35,6 @@ defineProps({
 
 .image__tags {
   display: flex;
-  justify-content: space-between;
 }
 
 .image__tags_margin_btm {

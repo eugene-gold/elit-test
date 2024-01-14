@@ -18,7 +18,6 @@ defineProps({
   category: String,
   quantity: Number
 })
-// user.addToUserFilters(category)
 </script>
 
 <style lang="scss" scoped>
@@ -42,6 +41,7 @@ defineProps({
 .category__close {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .category_green_theme {

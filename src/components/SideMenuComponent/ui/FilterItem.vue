@@ -1,7 +1,7 @@
 <template>
-  <label class="filter">{{ filterName }}
-    <input @click="user.addToUserFilters(filterName)" class="filter__input" :type="type || 'checkbox'"
-      :checked="isChecked" :name="name" />
+  <label class="filter">{{ item.filter }}
+    <input @click="user.addToUserFilters(item.filter)" class="filter__input" :type="type || 'checkbox'"
+      :checked="item.status" :name="name" />
     <span class="filter__checkmark"></span>
   </label>
 </template>
@@ -11,10 +11,15 @@ import { useUserStore } from '@/stores/userStore';
 const user = useUserStore()
 
 defineProps({
-  filterName: String,
-  isChecked: Boolean,
+  //use if input radio
   name: String,
-  type: String
+  //cnange type to radio
+  type: String,
+  item: {
+    type: Object,
+    requred: true,
+    default: () => { },
+  }
 })
 </script>
 

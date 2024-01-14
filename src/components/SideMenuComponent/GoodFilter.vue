@@ -17,8 +17,7 @@
       'filter-menu__wrapper_margin-top': isOpen,
       'filter-menu__wrapper_absolute_container': isSorted
     }">
-      <FilterItem v-for="item in filterArray" :filterName="item.filter" :isChecked="item.status" :key="item.filter"
-        :name="name" :type="type" />
+      <FilterItem v-for="item in filterArray" :key="item.filter" :name="name" :type="type" :item="item" />
     </div>
   </section>
 </template>
@@ -34,7 +33,8 @@ defineProps({
   filterArray: Array,
   name: String,
   type: String,
-  isSorted: Boolean
+  isSorted: Boolean,
+
 })
 
 const onClickOpen = () => {

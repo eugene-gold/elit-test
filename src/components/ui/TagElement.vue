@@ -1,5 +1,5 @@
 <template>
-  <div class="tag" :class="[
+  <div class="tag tag_margin-rigth" :class="[
     { orangeTag: tagName.toLowerCase() === 'хит' },
     { greenTag: tagName.toLowerCase() === 'новинка' },
     { blueTag: tagName.toLowerCase() === 'заморозка' },
@@ -27,6 +27,10 @@ defineProps({
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.44rem;
+}
+
+.tag_margin-rigth {
+  margin-right: 0.6rem;
 }
 
 .greenTag {
