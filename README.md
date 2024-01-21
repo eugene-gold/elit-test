@@ -1,4 +1,16 @@
+## Deploy
+
 https://eugene-gold.github.io/elit-test/
+
+## IDE Setup
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+
+## Architecture
+
+## FSD (partial)
+
+## Time
 
 27.12 настройка окружения 2 часа, верстка навигации 3 часа с настройкой(5часов итого)
 
@@ -19,4 +31,8 @@ https://eugene-gold.github.io/elit-test/
 7.12 верстка 2 часа
 
 8.12 стор 5 часов
+
+21.01.24  библиотека slider range 4 часа 
+[custom-vue-range-slider](https://github.com/miracleonyenma/custom-vue-range-slider/tree/main)
+
 

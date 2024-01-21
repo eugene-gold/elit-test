@@ -3,42 +3,13 @@
     <GoodFilter v-for="value in main.data.filters" :key="value.type" :filterType="value.type" :filterArray="value.list"
       name="sidemenu" />
 
+    <CustomMinMaxSlider :step="10" :max="1000" v-model:min-value="sliderMin" v-model:max-value="sliderMax" />
 
-    <div class="range range_margin-bottom">
-      <h2 class="range__header">Вес</h2>
-      <div class="range__inputs range__inputs_margin-top">
-        <label for="" class="range__label">
-          <span class="range__text">от</span>
-          <input :value="sliderMinValue" type="number" class="range__input" min="0" max="1000" placeholder="140">
-          <span class="range__text">г</span>
-        </label>
-        <label class="range__label">
-          <span class="range__text">до</span>
-          <input :value="sliderMaxValue" type="number" class="range__input" min="0" max="1000" placeholder="480">
-          <span class="range__text">г</span>
-        </label>
-      </div>
-      <Slider v-model="sliderValue" showTooltip="drag"></Slider>
+    <CustomMinMaxSlider name="Цена" measure="₽" :step="10" :max="1000" v-model:min-value="sliderMinValue"
+      v-model:max-value="sliderMaxValue" />
 
-    </div>
 
-    <div class="range range_margin-bottom">
-      <h2 class="range__header">Цена</h2>
-      <div class="range__inputs range__inputs_margin-top">
-        <label for="" class="range__label">
-          <span class="range__text">от</span>
-          <input :value="sliderMinValue" type="number" class="range__input" min="0" max="1000" placeholder="140">
-          <span class="range__text">₽</span>
-        </label>
-        <label class="range__label">
-          <span class="range__text">до</span>
-          <input :value="sliderMaxValue" type="number" class="range__input" min="0" max="1000" placeholder="480">
-          <span class="range__text">₽</span>
-        </label>
-      </div>
-      <Slider v-model="sliderValue" showTooltip="drag"></Slider>
 
-    </div>
     <Button class="filter-menu__button">Очистить фильтр</Button>
   </div>
 </template>
@@ -47,15 +18,15 @@
 import Button from '@/components/ui/Button.vue'
 import GoodFilter from './GoodFilter.vue'
 import { useMainStore } from '@/stores/mainStore';
-import Slider from '@vueform/slider'
+import CustomMinMaxSlider from '@/widgets/SideMenuWidget/CustomMinMaxSlider/CustomMinMaxSlider.vue';
 const main = useMainStore()
 import { ref } from 'vue';
 
 const sliderMinValue = ref(140)
 const sliderMaxValue = ref(480)
-const sliderValue = ref([sliderMinValue.value, sliderMaxValue.value])
 
-
+const sliderMin = ref(140);
+const sliderMax = ref(480);
 
 </script>
 
