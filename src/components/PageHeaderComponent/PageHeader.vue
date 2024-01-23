@@ -5,27 +5,20 @@
       <h4 class="page-header__info page-header__info_margin-left">60 товаров</h4>
     </div>
 
-    <!-- <div class="header__select">
-      <select class="header__select_select">
-        <option value="0">Сначала популярные</option>
-        <option value="1">Сначала дешевле</option>
-        <option value="2">Сначала дороже</option>
-        <option value="3">По размеру скидки</option>
-        <option value="4">Высокий рейтинг</option>
-      </select>
-    </div> -->
+    <CustomSelect :filterArray="filtersArray" />
 
 
 
-    <GoodFilter class="page-header__filter_margin-top" :filterArray="filtersArray" name="sortitems" type="radio"
+    <!-- <GoodFilter class="page-header__filter_margin-top" :filterArray="filtersArray" name="sortitems" type="radio"
       :isSorted="true">
       <h4 class="page-header__sort-wrapper page-header__sort-wrapper_margin">Cначала популярные</h4>
-    </GoodFilter>
+    </GoodFilter> -->
+
   </div>
 </template>
 
 <script setup>
-import GoodFilter from '@/components/SideMenuComponent/GoodFilter.vue'
+import CustomSelect from '@/widgets/CustomSelectWidget/CustomSelect.vue'
 import { ref } from 'vue'
 
 const filtersArray = ref([
@@ -40,12 +33,8 @@ const filtersArray = ref([
 <style lang="scss" scoped>
 @import '@/assets/variables.scss';
 
-.header__select_select,
-.header__select {
-  width: 10rem;
-  height: 2rem;
-  color: rgba(12, 12, 13, 0.8);
-}
+
+
 
 .page-header {
   display: flex;

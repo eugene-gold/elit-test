@@ -188,7 +188,7 @@ const onInput = ({ target }) => {
     height: var(--trackHeight);
     background: rgba(189, 189, 189, 1);
     border-radius: 999px;
-    margin: 0.5rem 0;
+    margin-top: 2.3rem;
     --progressLeft: 0%;
     --progressRight: 0%;
 }
