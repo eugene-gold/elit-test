@@ -69,7 +69,7 @@ export const useUserStore = defineStore('userStore', {
       const el = this.userData.userCart.find((elem) => elem.id === id)
       if (el.userSelected > 0) {
         el.userSelected = el.userSelected - el.weight
-      } else if (el.userSelected === 0) {
+      } else if (el.userSelected === 0 || typeof el.userSelected === 'object') {
         el.isAdded = false
         this.userData.userCart = this.userData.userCart.filter((elem) => elem.id !== id)
       }

@@ -1,11 +1,22 @@
 <template>
   <Transition name="modal">
-    <div class="modal" v-if="show">
+    <div class="modal" v-if="show" @click.self="$emit('close')">
       <div class="modal__content">
         <span class="modal__close" @click="$emit('close')">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 1L1 13M1 1L13 13" stroke="#BDBDBD" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L1 13M1 1L13 13"
+              stroke="#BDBDBD"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </span>
         <slot></slot>
@@ -15,12 +26,9 @@
 </template>
 
 <script setup>
-
 defineProps({
   show: Boolean
 })
-
-
 </script>
 
 <style lang="scss" scoped>

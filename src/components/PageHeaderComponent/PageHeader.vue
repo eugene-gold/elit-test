@@ -2,18 +2,17 @@
   <div class="page-header">
     <div class="page-header__container">
       <h1 class="page-header__text">Мясо. Птица. Фарш</h1>
-      <h4 class="page-header__info page-header__info_margin-left">60 товаров</h4>
+      <h4 class="page-header__info page-header__info_margin-left">
+        60 товаров
+      </h4>
     </div>
 
     <CustomSelect :filterArray="filtersArray" />
-
-
 
     <!-- <GoodFilter class="page-header__filter_margin-top" :filterArray="filtersArray" name="sortitems" type="radio"
       :isSorted="true">
       <h4 class="page-header__sort-wrapper page-header__sort-wrapper_margin">Cначала популярные</h4>
     </GoodFilter> -->
-
   </div>
 </template>
 
@@ -32,9 +31,6 @@ const filtersArray = ref([
 
 <style lang="scss" scoped>
 @import '@/assets/variables.scss';
-
-
-
 
 .page-header {
   display: flex;

@@ -1,13 +1,20 @@
 <template>
-  <label class="filter">{{ item.filter }}
-    <input @click="user.addToUserFilters(item.filter)" class="filter__input" :type="type || 'checkbox'"
-      :checked="item.status" :name="name" />
-    <span class="filter__checkmark"></span>
+  <label class="filter"
+    >{{ item.filter }}
+    <input
+      @click="user.addToUserFilters(item.filter)"
+      class="filter__input"
+      :type="type || 'checkbox'"
+      :checked="item.status"
+      :name="name"
+    />
+    <SelectedItem />
   </label>
 </template>
 
 <script setup>
-import { useUserStore } from '@/stores/userStore';
+import SelectedItem from '@/shared/UI/SelectedItem/SelectedItem.vue'
+import { useUserStore } from '@/stores/userStore'
 const user = useUserStore()
 
 defineProps({
@@ -18,7 +25,7 @@ defineProps({
   item: {
     type: Object,
     requred: true,
-    default: () => { },
+    default: () => {}
   }
 })
 </script>
@@ -48,31 +55,15 @@ defineProps({
   width: 0;
 }
 
-.filter__checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.4rem;
-  width: 1.4rem;
-  border-radius: 50%;
-  background-color: $bg-transparent;
-}
-
-.filter:hover .filter__input~.filter__checkmark {
+.filter:hover .filter__input ~ .filter__checkmark {
   background-color: #ccc;
 }
 
-.filter .filter__input:checked~.filter__checkmark {
+.filter .filter__input:checked ~ .filter__checkmark {
   background-color: $filter-checked-color;
 }
 
-.filter__checkmark:after {
-  content: '';
-  position: absolute;
-  display: none;
-}
-
-.filter .filter__input:checked~.filter__checkmark:after {
+.filter .filter__input:checked ~ .filter__checkmark:after {
   display: block;
 }
 
