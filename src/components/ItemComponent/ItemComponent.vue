@@ -14,11 +14,9 @@
           :id="item.id"
         />
       </div>
-
       <div class="item-main__info">
         <div class="item-main__header">
           <h3>{{ item.title }}</h3>
-
           <div class="item-main__company item-main__company_margin-top">
             <span class="item-main_name item-main_name_margin-rigth">{{
               item.company

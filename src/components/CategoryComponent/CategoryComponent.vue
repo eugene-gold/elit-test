@@ -1,22 +1,29 @@
 <template>
   <div class="categories categories_margin-top">
     <div class="categories__all">
-      <CategoryInfo v-for="item in main.data.categories" :key="item.category" :category="item.category"
-        :quantity="item.quantity" />
+      <CategoryInfo
+        v-for="item in main.data.categories"
+        :key="item.category"
+        :category="item.category"
+        :quantity="item.quantity"
+      />
     </div>
     <div class="categories__chosen">
-      <CategoryInfo v-for="item in user.userData.filters" :key="item" :category="item" />
+      <CategoryInfo
+        v-for="item in user.userData.filters"
+        :key="item"
+        :category="item"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
 import CategoryInfo from './ui/CategoryInfo.vue'
-import { useMainStore } from '@/stores/mainStore';
-import { useUserStore } from '@/stores/userStore';
+import { useMainStore } from '@/stores/mainStore'
+import { useUserStore } from '@/stores/userStore'
 const main = useMainStore()
 const user = useUserStore()
-
 </script>
 
 <style lang="scss" scoped>

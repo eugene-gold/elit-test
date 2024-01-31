@@ -1,12 +1,14 @@
 <template>
-  <div class="tag tag_margin-rigth" :class="[
-    { orangeTag: tagName.toLowerCase() === 'хит' },
-    { greenTag: tagName.toLowerCase() === 'новинка' },
-    { blueTag: tagName.toLowerCase() === 'заморозка' },
-    { redTag: tagName.toLowerCase() === 'ликвидация' },
-    { plusTag: tagName === '9+1' }
-
-  ]">
+  <div
+    class="tag tag_margin-rigth"
+    :class="[
+      { orangeTag: tagName.toLowerCase() === 'хит' },
+      { greenTag: tagName.toLowerCase() === 'новинка' },
+      { blueTag: tagName.toLowerCase() === 'заморозка' },
+      { redTag: tagName.toLowerCase() === 'ликвидация' },
+      { plusTag: tagName === '9+1' }
+    ]"
+  >
     <slot>{{ tagName }}</slot>
   </div>
 </template>

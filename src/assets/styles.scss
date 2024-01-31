@@ -1,11 +1,11 @@
-@import './variables.scss';
+@import 'variables';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: Inter, sans-serif;
     color: #0C0C0D;
     font-weight: 400;
 }
@@ -16,7 +16,7 @@ textarea,
 select {
     margin: 0;
     font: inherit;
-    color: #ffffff;
+    color: #fff;
     border: none;
 }
 
@@ -26,7 +26,7 @@ ul {
   
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
 }
 
 h1 {

@@ -1,18 +1,13 @@
 <template>
   <div class="page-header">
     <div class="page-header__container">
-      <h1 class="page-header__text">Мясо. Птица. Фарш</h1>
+      <h1>Мясо. Птица. Фарш</h1>
       <h4 class="page-header__info page-header__info_margin-left">
         60 товаров
       </h4>
     </div>
 
     <CustomSelect :filterArray="filtersArray" />
-
-    <!-- <GoodFilter class="page-header__filter_margin-top" :filterArray="filtersArray" name="sortitems" type="radio"
-      :isSorted="true">
-      <h4 class="page-header__sort-wrapper page-header__sort-wrapper_margin">Cначала популярные</h4>
-    </GoodFilter> -->
   </div>
 </template>
 
@@ -50,17 +45,5 @@ const filtersArray = ref([
 
 .page-header__info_margin-left {
   margin-left: 2.5rem;
-}
-
-.page-header__filter_margin-top {
-  margin-top: 0.6rem;
-}
-
-.page-header__sort-wrapper {
-  color: rgba(12, 12, 13, 0.8);
-}
-
-.page-header__sort-wrapper_margin {
-  margin-right: 0.8rem;
 }
 </style>

@@ -2,16 +2,13 @@
   <header>
     <NavigationMenu />
   </header>
-
   <main>
     <BreadCrumbs />
     <div class="main__content" v-if="!data.isLoading">
       <SideMenu />
       <ContentPage />
     </div>
-    <h1 v-else>
-      ...Loading
-    </h1>
+    <h1 v-else>...Loading</h1>
   </main>
 </template>
 
@@ -24,16 +21,10 @@ import { useMainStore } from './stores/mainStore'
 import { onMounted } from 'vue'
 const data = useMainStore()
 
-
 onMounted(() => {
   data.getData()
-
 })
-
-
-
 </script>
-
 
 <style lang="scss">
 @import '@/assets/variables.scss';

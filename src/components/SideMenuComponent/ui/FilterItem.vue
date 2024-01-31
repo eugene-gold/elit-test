@@ -18,9 +18,9 @@ import { useUserStore } from '@/stores/userStore'
 const user = useUserStore()
 
 defineProps({
-  //use if input radio
+  //for input radio
   name: String,
-  //cnange type to radio
+  //cnange type
   type: String,
   item: {
     type: Object,
