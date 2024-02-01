@@ -17,7 +17,7 @@
   background-color: $bg-transparent;
 }
 
-.filter__checkmark:after {
+.filter__checkmark::after {
   content: '';
   position: absolute;
   display: none;

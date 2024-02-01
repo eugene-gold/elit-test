@@ -2,7 +2,7 @@
   <Transition name="modal">
     <div class="modal" v-if="show" @click.self="$emit('close')">
       <div class="modal__content">
-        <span class="modal__close" @click="$emit('close')">         
+        <span class="modal__close" @click="$emit('close')">
           <SvgIcon name="grey_cross" />
         </span>
         <slot></slot>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue' 
+import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
 defineProps({
   show: Boolean
 })
@@ -28,7 +28,7 @@ defineProps({
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(93, 136, 150, 0.4);
+  background-color: rgb(93 136 150 / 40%);
   display: flex;
   transition: opacity 0.3s ease;
 }
@@ -53,7 +53,7 @@ defineProps({
   min-width: 75rem;
   padding: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 33%);
   position: relative;
 }
 
@@ -67,7 +67,6 @@ defineProps({
 
 .modal-enter-from .modal-container,
 .modal-leave-to .modal-container {
-  -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 </style>

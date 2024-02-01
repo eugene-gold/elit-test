@@ -37,7 +37,7 @@ defineProps({
   display: flex;
   padding: 1.2rem;
   border-radius: 0.6rem;
-  background: rgba(242, 243, 245, 1);
+  background: rgb(242 243 245 / 100%);
 }
 
 .category__container,
@@ -55,7 +55,7 @@ defineProps({
 }
 
 .category_green_theme {
-  background: rgba(70, 161, 117, 0.16);
+  background: rgb(70 161 117 / 16%);
   color: #46a175;
 }
 

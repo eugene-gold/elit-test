@@ -83,7 +83,7 @@ const inputData = ref('')
   display: flex;
   height: 4.2rem;
   position: relative;
-  width: 48.828125%;
+  width: 48.8281%;
 }
 
 .search_margin {
@@ -97,7 +97,7 @@ const inputData = ref('')
 }
 
 .search__name {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5rem;
   line-height: 1.8rem;
   font-weight: 500;
@@ -147,7 +147,7 @@ const inputData = ref('')
 }
 
 .navbar__badge {
-  color: #ffffff;
+  color: #fff;
   border-radius: 4.4rem;
   font-weight: 600;
   font-size: 1.1rem;

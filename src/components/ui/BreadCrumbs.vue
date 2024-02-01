@@ -18,6 +18,7 @@ import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
 
 <style lang="scss" scoped>
 @import '@/assets/variables.scss';
+
 .crumbs {
   display: flex;
 }

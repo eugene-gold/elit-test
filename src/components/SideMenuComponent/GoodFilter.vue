@@ -91,10 +91,10 @@ const onClickOpen = () => {
   width: 19.2rem;
   padding: 2rem 1.6rem 0.5rem;
   border-radius: 1.2rem;
-  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.4rem 2rem rgb(0 0 0 / 15%);
   right: 0;
   top: 1rem;
-  background: #ffffff;
+  background: #fff;
 }
 
 .filter-menu__wrapper_margin-top {

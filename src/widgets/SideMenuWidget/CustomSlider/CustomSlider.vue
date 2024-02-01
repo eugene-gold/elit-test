@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-slider">
+  <div class="custom__slider">
     <input
       ref="slider"
       :value="sliderValue"
@@ -76,48 +76,48 @@ watchEffect(() => {
 </script>
 
 <style lang="scss" scoped>
-.custom-slider {
-  --trackHeight: 0.5rem;
-  --thumbRadius: 1rem;
+.custom__slider {
+  --trackheight: 0.5rem;
+  --thumbradius: 1rem;
 }
 
-.custom-slider input[type='range'] {
+.custom__slider input[type='range'] {
   position: relative;
   appearance: none;
   border-radius: 999px;
   z-index: 0;
 }
 
-.custom-slider input[type='range']::before {
+.custom__slider input[type='range']::before {
   content: '';
   position: absolute;
-  width: var(--ProgressPercent, 100%);
+  width: var(--progresspercent, 100%);
   height: 100%;
   background: #00865a;
   pointer-events: none;
   border-radius: 999px;
 }
 
-.custom-slider input[type='range']::-webkit-slider-runnable-track {
+.custom__slider input[type='range']::-webkit-slider-runnable-track {
   appearance: none;
   background: #005a3c;
-  height: var(--trackHeight);
+  height: var(--trackheight);
   border-radius: 999px;
 }
 
-.custom-slider input[type='range']::-moz-range-track {
+.custom__slider input[type='range']::-moz-range-track {
   appearance: none;
   background: #005a3c;
-  height: var(--trackHeight);
+  height: var(--trackheight);
   border-radius: 999px;
 }
 
-.custom-slider input[type='range']::-webkit-slider-thumb {
+.custom__slider input[type='range']::-webkit-slider-thumb {
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
-  width: var(--thumbRadius);
-  height: var(--thumbRadius);
+  width: var(--thumbradius);
+  height: var(--thumbradius);
   background: #00bd7e;
   border-radius: 999px;
   pointer-events: all;

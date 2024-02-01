@@ -25,7 +25,7 @@ defineProps({
 .tag {
   padding: 0.6rem 0.8rem;
   border-radius: 0.6rem;
-  color: #ffffff;
+  color: #fff;
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.44rem;
@@ -36,15 +36,15 @@ defineProps({
 }
 
 .greenTag {
-  background: rgba(16, 177, 69, 1);
+  background: rgb(16 177 69 / 100%);
 }
 
 .orangeTag {
-  background: rgba(255, 140, 34, 1);
+  background: rgb(255 140 34 / 100%);
 }
 
 .blueTag {
-  background: rgba(34, 198, 234, 1);
+  background: rgb(34 198 234 / 100%);
 }
 
 .redTag {
@@ -52,6 +52,6 @@ defineProps({
 }
 
 .plusTag {
-  background: rgba(145, 139, 198, 1);
+  background: rgb(145 139 198 / 100%);
 }
 </style>

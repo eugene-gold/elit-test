@@ -115,7 +115,7 @@ defineProps({
   position: relative;
   max-width: 75rem;
   padding: 2rem;
-  background: #ffffff;
+  background: #fff;
 }
 
 .item-main {

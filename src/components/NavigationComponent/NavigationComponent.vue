@@ -87,10 +87,6 @@ import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
 }
 
 .navigation__next_margin-left {
-  margin-left: 2.5rem;
-}
-
-.navigation__next_margin-left {
   margin-left: 1.4rem;
 }
 

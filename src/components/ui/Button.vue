@@ -8,6 +8,7 @@
 
 <style lang="scss" scoped>
 @import '@/assets/variables.scss';
+
 .btn {
   display: flex;
   align-items: center;

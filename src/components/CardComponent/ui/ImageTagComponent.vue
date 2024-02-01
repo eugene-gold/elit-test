@@ -51,12 +51,12 @@ defineProps({
 
 .image__bar {
   height: 0.2rem;
-  background: rgba(244, 244, 244, 1);
+  background: rgb(244 244 244 / 100%);
   border-radius: 0.6rem;
   width: 4.9rem;
 }
 
 .image__bar_dark {
-  background: rgba(133, 133, 133, 1);
+  background: rgb(133 133 133 / 100%);
 }
 </style>

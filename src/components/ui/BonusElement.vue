@@ -27,7 +27,7 @@ defineProps({
   font-weight: 600;
   font-size: 1.2rem;
   line-height: 1.44rem;
-  color: #ffffff;
+  color: #fff;
 }
 
 .prices__logo {

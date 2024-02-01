@@ -1,7 +1,7 @@
 <template>
   <div class="range range_margin-bottom">
     <h2>{{ name }}</h2>
-    <div class="minmax-inputs range__inputs range__inputs_margin-top">
+    <div class="minmax__inputs range__inputs range__inputs_margin-top">
       <label for="" class="range__label">
         <span class="range__text">от</span>
         <input
@@ -29,7 +29,7 @@
         <span class="range__text">{{ measure }}</span>
       </label>
     </div>
-    <div ref="slider" class="custom-slider minmax">
+    <div ref="slider" class="custom__slider minmax">
       <div class="minmax-indicator"></div>
       <input
         ref="inputMin"
@@ -138,12 +138,12 @@ const onInput = ({ target }) => {
 <style lang="scss" scoped>
 @import '@/assets/variables.scss';
 
-.custom-slider {
-  --trackHeight: 0.3rem;
-  --thumbRadius: 1.9rem;
+.custom__slider {
+  --trackheight: 0.3rem;
+  --thumbradius: 1.9rem;
 }
 
-.custom-slider input[type='range'] {
+.custom__slider input[type='range'] {
   position: relative;
   appearance: none;
   background: none;
@@ -153,50 +153,50 @@ const onInput = ({ target }) => {
   pointer-events: none;
 }
 
-.custom-slider input[type='range']::before {
+.custom__slider input[type='range']::before {
   content: '';
   display: block;
   position: absolute;
-  width: var(--ProgressPercent, 100%);
+  width: var(--progresspercent, 100%);
   height: 100%;
   background: #00865a;
   border-radius: 999px;
 }
 
-.custom-slider input[type='range']::-webkit-slider-runnable-track {
+.custom__slider input[type='range']::-webkit-slider-runnable-track {
   appearance: none;
   background: #005a3c;
-  height: var(--trackHeight);
+  height: var(--trackheight);
   border-radius: 999px;
 }
 
-.custom-slider input[type='range']::-webkit-slider-thumb {
+.custom__slider input[type='range']::-webkit-slider-thumb {
   position: relative;
-  width: var(--thumbRadius);
-  height: var(--thumbRadius);
-  margin-top: calc((var(--trackHeight) - var(--thumbRadius)) / 2);
-  background: #ffffff;
+  width: var(--thumbradius);
+  height: var(--thumbradius);
+  margin-top: calc((var(--trackheight) - var(--thumbradius)) / 2);
+  background: #fff;
   pointer-events: all;
   appearance: none;
   z-index: 1;
   cursor: pointer;
-  box-shadow: 0 0.2rem 1.1rem rgba(12, 12, 13, 0.2);
+  box-shadow: 0 0.2rem 1.1rem rgb(12 12 13 / 20%);
   border-radius: 50%;
 }
 
-.custom-slider.default input[type='range']::-moz-range-track {
+.custom__slider.default input[type='range']::-moz-range-track {
   appearance: none;
   background: #005a3c;
-  height: var(--trackHeight);
+  height: var(--trackheight);
   border-radius: 999px;
 }
 
-.custom-slider input[type='range']::-moz-range-thumb {
+.custom__slider input[type='range']::-moz-range-thumb {
   position: relative;
   box-sizing: border-box;
-  width: var(--thumbRadius);
-  height: var(--thumbRadius);
-  margin-top: calc((var(--trackHeight) - var(--thumbRadius)) / 2);
+  width: var(--thumbradius);
+  height: var(--thumbradius);
+  margin-top: calc((var(--trackheight) - var(--thumbradius)) / 2);
   background: #005a3c;
   border: 1px solid #00865a;
   border-radius: 999px;
@@ -205,56 +205,57 @@ const onInput = ({ target }) => {
   z-index: 1;
 }
 
-.custom-slider.minmax {
+.custom__slider.minmax {
   position: relative;
-  height: var(--trackHeight);
-  background: rgba(189, 189, 189, 1);
+  height: var(--trackheight);
+  background: rgb(189 189 189 / 100%);
   border-radius: 999px;
   margin-top: 2.3rem;
-  --progressLeft: 0%;
-  --progressRight: 0%;
+
+  --progressleft: 0%;
+  --progressright: 0%;
 }
 
 .minmax-indicator {
   position: absolute;
   height: 100%;
   pointer-events: none;
-  left: var(--thumbRadius);
-  right: var(--thumbRadius);
+  left: var(--thumbradius);
+  right: var(--thumbradius);
 }
 
 .minmax-indicator::before {
   content: '';
   position: absolute;
-  background: rgba(70, 161, 117, 0.7);
+  background: rgb(70 161 117 / 70%);
   height: 100%;
-  left: var(--progressLeft);
-  right: var(--progressRight);
+  left: var(--progressleft);
+  right: var(--progressright);
 }
 
-.custom-slider.minmax input[type='range'] {
+.custom__slider.minmax input[type='range'] {
   position: absolute;
-  width: calc(100% - var(--thumbRadius));
+  width: calc(100% - var(--thumbradius));
 }
 
-.custom-slider.minmax input[type='range'][name='max'] {
-  left: var(--thumbRadius);
+.custom__slider.minmax input[type='range'][name='max'] {
+  left: var(--thumbradius);
 }
 
-.custom-slider.minmax input[type='range']::-webkit-slider-runnable-track {
+.custom__slider.minmax input[type='range']::-webkit-slider-runnable-track {
   background: none;
 }
 
-.custom-slider.minmax input[type='range']::before {
+.custom__slider.minmax input[type='range']::before {
   display: none;
 }
 
-.minmax-inputs {
+.minmax__inputs {
   display: flex;
   justify-content: space-between;
 }
 
-.minmax-inputs input {
+.minmax__inputs input {
   width: 50px;
   color: black;
 }
@@ -278,10 +279,7 @@ const onInput = ({ target }) => {
   padding: 1rem;
   width: 10.7rem;
   justify-content: space-between;
-}
-
-.range__label {
-  background: rgba(93, 136, 150, 0.08);
+  background: rgb(93 136 150 / 8%);
 }
 
 .range__input {
@@ -294,7 +292,7 @@ const onInput = ({ target }) => {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.68rem;
-  color: rgba(133, 133, 133, 1);
+  color: rgb(133 133 133 / 100%);
 }
 
 .range {

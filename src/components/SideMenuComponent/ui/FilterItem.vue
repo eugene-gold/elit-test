@@ -41,9 +41,6 @@ defineProps({
   cursor: pointer;
   font-size: 1.4rem;
   line-height: 1.68rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -63,19 +60,17 @@ defineProps({
   background-color: $filter-checked-color;
 }
 
-.filter .filter__input:checked ~ .filter__checkmark:after {
-  display: block;
-}
-
-.filter .filter__checkmark:after {
+.filter .filter__checkmark::after {
   left: 0.5rem;
   top: 0.2rem;
   width: 0.2rem;
   height: 0.6rem;
   border: solid white;
   border-width: 0 0.2rem 0.2rem 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.filter .filter__input:checked ~ .filter__checkmark::after {
+  display: block;
 }
 </style>

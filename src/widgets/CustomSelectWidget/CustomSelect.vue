@@ -102,7 +102,7 @@ const handler = (e) => {
 .selected-value {
   text-align: left;
   font-size: 1.4rem;
-  color: rgba(12, 12, 13, 0.8);
+  color: rgb(12 12 13 / 80%);
   line-height: 1.68rem;
   padding-right: 0.8rem;
 }
@@ -114,7 +114,7 @@ const handler = (e) => {
 .select-dropdown {
   position: absolute;
   width: 100%;
-  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.4rem 2rem rgb(0 0 0 / 15%);
   background-color: #fff;
   border-radius: 1.2rem;
   padding: 2rem 1.6rem 0.5rem;
@@ -123,14 +123,18 @@ const handler = (e) => {
   overflow-y: auto;
   transition: 0.5s ease;
   z-index: 3;
-
   transform: scaleY(0);
   opacity: 0;
   visibility: hidden;
 }
 
 .select-dropdown:focus-within {
-  box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+  box-shadow: 0 10px 25px rgb(94 108 233 / 60%);
+}
+
+.select-dropdown label {
+  font-size: 1.4rem;
+  color: rgb(12 12 13 / 80%);
 }
 
 .select-dropdown li {
@@ -194,15 +198,7 @@ const handler = (e) => {
   cursor: pointer;
   font-size: 1.5rem;
   line-height: 1.68rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-}
-
-.select-dropdown label {
-  font-size: 1.4rem;
-  color: rgba(12, 12, 13, 0.8);
 }
 
 .select-dropdown li:hover .filter__input ~ .filter__checkmark {
@@ -213,19 +209,17 @@ const handler = (e) => {
   background-color: $filter-checked-color;
 }
 
-.select-dropdown li .filter__input:checked ~ .filter__checkmark:after {
-  display: block;
-}
-
-.select-dropdown li .filter__checkmark:after {
+.select-dropdown li .filter__checkmark::after {
   left: 0.5rem;
   top: 0.2rem;
   width: 0.2rem;
   height: 0.6rem;
   border: solid white;
   border-width: 0 0.2rem 0.2rem 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.select-dropdown li .filter__input:checked ~ .filter__checkmark::after {
+  display: block;
 }
 </style>

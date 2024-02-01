@@ -37,10 +37,10 @@ header {
 
 main {
   display: flex;
+  margin: 3rem auto 0;
   margin-top: 3rem;
   flex-direction: column;
   max-width: 128rem;
-  margin: 3rem auto 0;
 }
 
 .main__content {
