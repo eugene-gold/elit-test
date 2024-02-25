@@ -1,7 +1,9 @@
 <template>
   <div class="image__info">
     <SvgIcon name="star" class="image__star" />
-    <span class="image__rate image__rate_margin-left">{{ rate }}</span>
+    <span class="image__rate image__rate_margin-left">
+      {{ rate }}
+    </span>
   </div>
 </template>
 

@@ -4,7 +4,7 @@
       <img src="/logo.png" alt="company_name" />
     </div>
     <div class="search search_margin">
-      <Button class="search__catalog" @click="console.log('notning here...')">
+      <Button @button-event="openCatalog" class="search__catalog">
         <SvgIcon name="foursquare" />
         <span class="search__name">Каталог</span>
       </Button>
@@ -55,11 +55,15 @@
 
 <script setup>
 import { ref } from 'vue'
-import Button from './ui/Button.vue'
+import Button from '@/shared/UI/Button/Button.vue'
 import { useUserStore } from '@/stores/userStore'
 import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
 const user = useUserStore()
 const inputData = ref('')
+
+const openCatalog = () => {
+  console.log('notning in catalog yet...')
+}
 </script>
 
 <style lang="scss" scoped>

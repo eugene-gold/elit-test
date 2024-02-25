@@ -1,19 +1,17 @@
 <template>
   <div class="content-page content-page_padding-left">
-    <PageHeader />
+    <PageHeaderComponent />
     <CategoryComponent />
-    <CardsList />
+    <CardsListComponent />
     <NavigationComponent />
   </div>
 </template>
 
 <script setup>
-import CardsList from '@/components/CardsList.vue'
-import PageHeader from '@/components/PageHeaderComponent/PageHeader.vue'
+import CardsListComponent from '@/components/CardsListComponent/CardsListComponent.vue'
+import PageHeaderComponent from '@/components/PageHeaderComponent/PageHeaderComponent.vue'
 import CategoryComponent from '@/components/CategoryComponent/CategoryComponent.vue'
 import NavigationComponent from '@/components/NavigationComponent/NavigationComponent.vue'
-
-
 </script>
 
 <style lang="scss" scoped>

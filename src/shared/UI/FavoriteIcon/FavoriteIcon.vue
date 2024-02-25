@@ -1,17 +1,14 @@
 <template>
-  <div class="image__favorite" @click="main.toggleFavorite(id)">
+  <div class="image__favorite" @click="$emit('changeFavorite')">
     <SvgIcon name="heart2" class="image__like" :class="{ added: isFavorite }" />
   </div>
 </template>
 
 <script setup>
-import { useMainStore } from '@/stores/mainStore'
 import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
-const main = useMainStore()
 
 defineProps({
-  isFavorite: Boolean,
-  id: Number
+  isFavorite: Boolean
 })
 </script>
 

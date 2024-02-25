@@ -2,24 +2,16 @@
   <div class="navigation navigation_margin">
     <Button class="navigation__button"> Загрузить еще </Button>
     <div class="navigation__pages navigation__pages_margin_top">
-      <span
-        class="navigation__page navigation_font navigation__page_margin-left"
-      >
+      <span class="navigation__page navigation_font navigation__page_margin-left">
         1
       </span>
-      <span
-        class="navigation__page navigation_font navigation__page_margin-left"
-      >
+      <span class="navigation__page navigation_font navigation__page_margin-left">
         2
       </span>
-      <span
-        class="navigation__page navigation_font navigation__page_margin-left"
-      >
+      <span class="navigation__page navigation_font navigation__page_margin-left">
         3
       </span>
-      <Button
-        class="navigation__next navigation_font navigation__next_margin-left"
-      >
+      <Button class="navigation__next navigation_font navigation__next_margin-left">
         Дальше
         <span class="navigation__next_margin-left">
           <SvgIcon name="to_right" />
@@ -30,7 +22,7 @@
 </template>
 
 <script setup>
-import Button from '../ui/Button.vue'
+import Button from '@/shared/UI/Button/Button.vue'
 import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
 </script>
 

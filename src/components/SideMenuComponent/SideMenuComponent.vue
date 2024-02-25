@@ -26,8 +26,8 @@
 </template>
 
 <script setup>
-import Button from '@/components/ui/Button.vue'
-import GoodFilter from './GoodFilter.vue'
+import Button from '@/shared/UI/Button/Button.vue'
+import GoodFilter from './model/GoodFilter.vue'
 import { useMainStore } from '@/stores/mainStore'
 import CustomMinMaxSlider from '@/widgets/SideMenuWidget/CustomMinMaxSlider/CustomMinMaxSlider.vue'
 const main = useMainStore()

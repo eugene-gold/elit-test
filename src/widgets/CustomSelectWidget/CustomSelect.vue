@@ -1,7 +1,7 @@
 <template>
   <div class="custom-select">
-    <button
-      @click="onClickOpen"
+    <Button
+      @button-event="onClickOpen"
       class="select-button"
       role="combobox"
       aria-labelledby="select button"
@@ -15,7 +15,7 @@
       <span class="arrow" :class="{ active: isOpen }">
         <SvgIcon name="to_down" />
       </span>
-    </button>
+    </Button>
     <ul
       ref="optionsRef"
       class="select-dropdown"
@@ -49,6 +49,7 @@
 import { ref, onMounted } from 'vue'
 import SelectedItem from '@/shared/UI/SelectedItem/SelectedItem.vue'
 import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
+import Button from '@/shared/UI/Button/Button.vue'
 
 defineProps({
   filterArray: Array
@@ -97,6 +98,8 @@ const handler = (e) => {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: unset;
+  padding: unset;
 }
 
 .selected-value {

@@ -1,11 +1,11 @@
 <template>
   <header>
-    <NavigationMenu />
+    <NavagationMenuComponent />
   </header>
   <main>
     <BreadCrumbs />
     <div class="main__content" v-if="!data.isLoading">
-      <SideMenu />
+      <SideMenuComponent />
       <ContentPage />
     </div>
     <h1 v-else>...Loading</h1>
@@ -13,9 +13,9 @@
 </template>
 
 <script setup>
-import SideMenu from '@/components/SideMenuComponent/SideMenu.vue'
-import NavigationMenu from '@/components/NavigationMenu.vue'
-import BreadCrumbs from '@/components/ui/BreadCrumbs.vue'
+import SideMenuComponent from '@/components/SideMenuComponent/SideMenuComponent.vue'
+import NavagationMenuComponent from '@/components/NavagationMenuComponent/NavagationMenuComponent.vue'
+import BreadCrumbs from '@/shared/UI/BreadCrumbs/BreadCrumbs.vue'
 import ContentPage from './pages/ContentPage.vue'
 import { useMainStore } from './stores/mainStore'
 import { onMounted } from 'vue'

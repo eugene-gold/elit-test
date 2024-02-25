@@ -1,7 +1,7 @@
 <template>
   <div class="prices__actual prices__actual_margin-top">
     {{ price }} &#8381;
-    <span class="prices__measure" :style="styleObject">/ {{ measure }}</span>
+    <span class="prices__measure" :style="styleObject"> / {{ measure }} </span>
   </div>
 </template>
 

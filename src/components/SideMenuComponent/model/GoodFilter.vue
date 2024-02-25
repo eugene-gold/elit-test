@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import FilterItem from './ui/FilterItem.vue'
+import FilterItem from '../ui/FilterItem.vue'
 import { ref } from 'vue'
 import SvgIcon from '@/shared/UI/Icon/SvgIcon.vue'
 const isOpen = ref(true)

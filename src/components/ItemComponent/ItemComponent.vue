@@ -3,12 +3,13 @@
     <div class="item-main">
       <div class="item-main__image">
         <div class="item-main__tags">
-          <TagElement v-for="tag in item.tags" :key="tag" :tag-name="tag">{{
-            tag
-          }}</TagElement>
+          <TagElement v-for="tag in item.tags" :key="tag" :tag-name="tag">
+            {{ tag }}
+          </TagElement>
         </div>
         <img class="item-main__image" :alt="item.name" :src="item.imageUrl" />
         <FavoriteIcon
+          @change-favorite="main.toggleFavorite(item.id)"
           :is-favorite="item.isFavorite"
           class="item-main__favorite_position"
           :id="item.id"
@@ -18,18 +19,19 @@
         <div class="item-main__header">
           <h3>{{ item.title }}</h3>
           <div class="item-main__company item-main__company_margin-top">
-            <span class="item-main_name item-main_name_margin-rigth">{{
-              item.company
-            }}</span>
-            <span class="item-main_country"
-              >{{ item.country }} {{ item.weight }} кг</span
-            >
+            <span class="item-main_name item-main_name_margin-rigth">
+              {{ item.company }}
+            </span>
+            <span class="item-main_country">
+              {{ item.country }} {{ item.weight }} кг
+            </span>
             <ItemRate :rate="item.rate" class="item-main__rate" />
           </div>
         </div>
-
         <div class="item-main__prices">
-          <BonusElement v-if="item.bonus">{{ item.bonus }}</BonusElement>
+          <BonusElement v-if="item.bonus">
+            {{ item.bonus }}
+          </BonusElement>
           <PriceElement
             :price="item.price"
             :measure="item.measure"
@@ -48,41 +50,35 @@
               lineHeight: '1.56rem'
             }"
           />
-          <Button class="item-main__button item-main__button_margin-top"
-            >Добавить в корзину</Button
-          >
-          <span class="in_stock in_stock_margin-top">В наличии много</span>
-          <a class="to-cart_link to-cart_link_margin-top"
-            >Перейти в карточку товара</a
-          >
+          <Button class="item-main__button item-main__button_margin-top">
+            Добавить в корзину
+          </Button>
+          <span class="in_stock in_stock_margin-top"> В наличии много </span>
+          <a class="to-cart_link to-cart_link_margin-top"> Перейти в карточку товара </a>
         </div>
       </div>
     </div>
     <div class="item-main__additional item-main__additional_margin-top">
       <h3 class="item-main__header_line-h">Характеристики</h3>
-      <div
-        class="item-main_additional-wrapper item-main_additional-wrapper_margin-top"
-      >
+      <div class="item-main_additional-wrapper item-main_additional-wrapper_margin-top">
         <div class="item-main__block item-main__block_margin-right">
           <span class="item-main__additional-name">Срок хранения</span>
           <span class="item-main__additional-quantity">1 год</span>
         </div>
         <div class="item-main__block item-main__block_margin-right">
-          <span class="item-main__additional-name"
-            >Количество в транспортной упаковке</span
-          >
+          <span class="item-main__additional-name">
+            Количество в транспортной упаковке
+          </span>
           <span class="item-main__additional-quantity">10</span>
         </div>
         <div class="item-main__block item-main__block_margin-right">
-          <span class="item-main__additional-name"
-            >Тип транспортной упаковки</span
-          >
+          <span class="item-main__additional-name"> Тип транспортной упаковки </span>
           <span class="item-main__additional-quantity">Коробка</span>
         </div>
         <div class="item-main__block item-main__block_margin-right">
-          <span class="item-main__additional-name"
-            >Количество в транспортной упаковке на паллете</span
-          >
+          <span class="item-main__additional-name">
+            Количество в транспортной упаковке на паллете
+          </span>
           <span class="item-main__additional-quantity">40</span>
         </div>
       </div>
@@ -91,12 +87,15 @@
 </template>
 
 <script setup>
-import ItemRate from '@/components/ui/ItemRate.vue'
-import FavoriteIcon from '@/components/ui/FavoriteIcon.vue'
-import Button from '@/components/ui/Button.vue'
-import TagElement from '@/components/ui/TagElement.vue'
-import BonusElement from '@/components/ui/BonusElement.vue'
-import PriceElement from '@/components/ui/PriceElement.vue'
+import ItemRate from '@/shared/UI/ItemRate/ItemRate.vue'
+import FavoriteIcon from '@/shared/UI/FavoriteIcon/FavoriteIcon.vue'
+import Button from '@/shared/UI/Button/Button.vue'
+import TagElement from '@/shared/UI/TagElement/TagElement.vue'
+import BonusElement from '@/shared/UI/BonusElement/BonusElement.vue'
+import PriceElement from '@/shared/UI/PriceElement/PriceElement.vue'
+import { useMainStore } from '@/stores/mainStore'
+const main = useMainStore()
+
 defineProps({
   item: {
     type: Object,

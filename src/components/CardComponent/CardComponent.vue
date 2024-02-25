@@ -2,17 +2,19 @@
   <div class="card" @mouseover="hover = true" @mouseleave="hover = false">
     <ItemRate :rate="item.rate" />
 
-    <FavoriteIcon :is-favorite="item.isFavorite" :id="item.id" />
-
+    <FavoriteIcon
+      :is-favorite="item.isFavorite"
+      @change-favorite="main.toggleFavorite(item.id)"
+    />
     <div class="image image_padding" :class="{ image_height: item.isAdded }">
       <ImageTagComponent :tags="item.tags" />
 
       <img class="image_pic" :alt="item.title" :src="item.imageUrl" />
 
       <Button
+        @button-event="isVisible = true"
         class="image__button"
         :class="{ image__button_active: hover }"
-        @click="isVisible = true"
       >
         Подробнее
       </Button>
@@ -27,25 +29,27 @@
       </div>
       <div class="price-block price-block_margin">
         <div class="prices">
-          <span v-if="item.priceOld" class="prices__old"
-            >{{ item.priceOld }} &#8381;</span
-          >
-          <BonusElement v-if="item.bonus">{{ item.bonus }}</BonusElement>
+          <span v-if="item.priceOld" class="prices__old">
+            {{ item.priceOld }} &#8381;
+          </span>
+          <BonusElement v-if="item.bonus">
+            {{ item.bonus }}
+          </BonusElement>
           <PriceElement :price="item.price" :measure="item.measure" />
         </div>
-        <Button @click="main.addOnClick(item.id)" v-if="!item.isAdded">
+        <Button @button-event="main.addOnClick(item.id)" v-if="!item.isAdded">
           <SvgIcon name="cart_white" />
         </Button>
       </div>
       <div class="counter counter_margin-t" v-if="item.isAdded">
-        <Button class="counter__button" @click="user.decrementWeight(item.id)">
+        <Button class="counter__button" @button-event="user.decrementWeight(item.id)">
           <SvgIcon name="minus" />
         </Button>
         <span class="counter__quantity" v-if="item.userSelected"
           >{{ item.userSelected / 1000 }} кг</span
         >
         <span class="counter__quantity" v-if="!item.userSelected">2.5 кг</span>
-        <Button class="counter__button" @click="user.incrementWeight(item.id)">
+        <Button class="counter__button" @button-event="user.incrementWeight(item.id)">
           <SvgIcon name="plus" />
         </Button>
       </div>
@@ -60,13 +64,13 @@
 </template>
 
 <script setup>
-import Button from '@/components/ui/Button.vue'
-import BonusElement from '@/components/ui/BonusElement.vue'
+import Button from '@/shared/UI/Button/Button.vue'
+import BonusElement from '@/shared/UI/BonusElement/BonusElement.vue'
 import ImageTagComponent from './ui/ImageTagComponent.vue'
 import { ref } from 'vue'
-import ItemRate from '../ui/ItemRate.vue'
-import FavoriteIcon from '../ui/FavoriteIcon.vue'
-import PriceElement from '@/components/ui/PriceElement.vue'
+import ItemRate from '@/shared/UI/ItemRate/ItemRate.vue'
+import FavoriteIcon from '@/shared/UI/FavoriteIcon/FavoriteIcon.vue'
+import PriceElement from '@/shared/UI/PriceElement/PriceElement.vue'
 import Modal from '@/shared/UI/Modal/Modal.vue'
 import ItemComponent from '@/components/ItemComponent/ItemComponent.vue'
 import { useMainStore } from '@/stores/mainStore'
