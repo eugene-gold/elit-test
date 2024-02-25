@@ -1,0 +1,1 @@
+import{o as e,c as o,a as t}from"./index-4IRFsvTR.js";const s={xmlns:"http://www.w3.org/2000/svg",width:"8",height:"8",fill:"none"},n=t("path",{stroke:"#46A175","stroke-linecap":"round","stroke-linejoin":"round","stroke-width":"1.5",d:"M7 1 1 7m0-6 6 6"},null,-1),r=[n];function c(a,d){return e(),o("svg",s,[...r])}const l={render:c};export{l as default,c as render};
